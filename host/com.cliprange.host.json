@@ -1,0 +1,7 @@
+{
+  "name": "com.cliprange.host",
+  "description": "ClipRange native host: trims a YouTube clip with yt-dlp and encodes it to GIF with ffmpeg",
+  "path": "ClipRange.Host.exe",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://jndjblelcmehihkifdeblpobkadfkfbn/"]
+}

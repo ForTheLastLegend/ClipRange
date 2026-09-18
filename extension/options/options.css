@@ -1,0 +1,111 @@
+body {
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 0 16px;
+  font: 14px/1.5 system-ui, sans-serif;
+  color: #1f1f24;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 28px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: 600;
+}
+
+fieldset {
+  margin: 12px 0 0;
+  padding: 4px 12px 12px;
+  border: 1px solid #e0e0e4;
+  border-radius: 4px;
+}
+
+fieldset[hidden] {
+  display: none;
+}
+
+label.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+label.check input {
+  width: auto;
+}
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 8px;
+  border: 1px solid #c8c8cc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #ff455a;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+}
+
+.tool {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.tool label {
+  grid-column: 1 / -1;
+}
+
+.state {
+  font-weight: 400;
+  color: #6b6b73;
+}
+
+.state.is-missing {
+  color: #c62839;
+}
+
+.hint {
+  margin: 4px 0 0;
+  color: #6b6b73;
+}
+
+#banner {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #eef6ee;
+  color: #1f5f2a;
+}
+
+#banner.is-error {
+  background: #fdecee;
+  color: #a5202f;
+}

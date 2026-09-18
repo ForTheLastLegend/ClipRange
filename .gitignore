@@ -1,0 +1,5 @@
+host/bin/
+host/obj/
+installer/dist/
+*.user
+.vs/

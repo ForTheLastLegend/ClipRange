@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ClipRange</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>ClipRange</h1>
+  <p id="banner" hidden></p>
+
+  <form id="settings">
+    <h2 data-i18n="tools"></h2>
+    <p class="hint" data-i18n="toolsHint"></p>
+
+    <div class="tool" data-tool="yt-dlp">
+      <label>yt-dlp <span class="state"></span></label>
+      <input name="ytDlpPath" data-i18n-placeholder="pathPlaceholder|yt-dlp.exe">
+      <button type="button" class="install"></button>
+    </div>
+
+    <div class="tool" data-tool="ffmpeg">
+      <label>ffmpeg <span class="state"></span></label>
+      <input name="ffmpegPath" data-i18n-placeholder="pathPlaceholder|ffmpeg.exe">
+      <button type="button" class="install"></button>
+    </div>
+
+    <h2 data-i18n="output"></h2>
+    <label><span data-i18n="folder"></span> <input name="outputDir" required></label>
+
+    <label><span data-i18n="preset"></span>
+      <select name="preset">
+        <option value="light" data-i18n="presetLight"></option>
+        <option value="standard" data-i18n="presetStandard"></option>
+        <option value="high" data-i18n="presetHigh"></option>
+        <option value="custom" data-i18n="presetCustom"></option>
+      </select>
+    </label>
+    <p class="hint" id="preset-summary"></p>
+
+    <fieldset id="custom" hidden>
+      <label><span data-i18n="width"></span> <input name="width" type="number" required></label>
+      <label><span data-i18n="fps"></span> <input name="fps" type="number" required></label>
+      <label><span data-i18n="colors"></span>
+        <select name="colors">
+          <option value="64">64</option>
+          <option value="128">128</option>
+          <option value="256">256</option>
+        </select>
+      </label>
+      <label><span data-i18n="dither"></span>
+        <select name="dither">
+          <option value="none" data-i18n="ditherNone"></option>
+          <option value="bayer-light" data-i18n="ditherBayerLight"></option>
+          <option value="bayer" data-i18n="ditherBayer"></option>
+          <option value="sierra" data-i18n="ditherSierra"></option>
+        </select>
+      </label>
+      <label class="check"><input name="palettePerFrame" type="checkbox"> <span data-i18n="palettePerFrame"></span></label>
+      <p class="hint" data-i18n="outputHint"></p>
+    </fieldset>
+
+    <button type="submit" data-i18n="save"></button>
+  </form>
+
+  <script src="../i18n.js"></script>
+  <script src="../host-client.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

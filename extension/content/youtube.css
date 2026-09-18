@@ -1,0 +1,116 @@
+/* The wrapper only exists so the script can track its own buttons; the buttons
+   themselves sit in YouTube's flex row exactly like the native ones. */
+.cliprange {
+  display: contents;
+}
+
+/* Prefixed with the player's own class so these rules outrank YouTube's, which load later. */
+.ytp-chrome-controls .cliprange .ytp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 44px;
+  padding: 0 6px;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.ytp-chrome-controls .cliprange .ytp-button:hover {
+  opacity: 1;
+}
+
+.ytp-chrome-controls .cliprange .ytp-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.ytp-chrome-controls .cliprange .ytp-button.is-set,
+.ytp-chrome-controls .cliprange .ytp-button.is-armed {
+  color: #ff455a;
+}
+
+.cliprange-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cliprange-markers div {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 3px;
+  margin-left: -1px;
+  border-radius: 1px;
+  background: #ff455a;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.cliprange-markers div[hidden] {
+  display: none;
+}
+
+.cliprange-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  height: 36px;
+  margin-left: 12px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: var(--yt-spec-badge-chip-background, rgba(255, 255, 255, 0.1));
+  color: var(--yt-spec-text-primary, #fff);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.cliprange-status[hidden] {
+  display: none;
+}
+
+.cliprange-status-track {
+  width: 120px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--yt-spec-10-percent-layer, rgba(255, 255, 255, 0.2));
+  overflow: hidden;
+}
+
+.cliprange-status-track div {
+  height: 100%;
+  background: #ff455a;
+  transition: width 0.3s;
+}
+
+.cliprange-status-track.is-indeterminate div {
+  width: 40%;
+  animation: cliprange-slide 1.2s linear infinite;
+}
+
+@keyframes cliprange-slide {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(250%); }
+}
+
+.cliprange-notice {
+  position: absolute;
+  left: 12px;
+  bottom: 64px;
+  max-width: 60%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(28, 28, 28, 0.92);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  z-index: 60;
+}
+
+.cliprange-notice.is-error {
+  border-left: 3px solid #ff455a;
+}

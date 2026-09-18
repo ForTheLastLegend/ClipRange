@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "ClipRange",
+  "version": "0.1.0",
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0EPc2EHk02EgoRhRRj8EROC0Y2MCSqZwoHroGvuYqNZeO0wuj01PMRcsVXpk/dlPCAgrnrwT6gkMQepBnfCVC6fWSzuiP3xBXjKOAJAVDStdvTqjzjF0jCcY3HVqJo8m0LwAG8oGR3EQA8Wmhwvd2CTT8efPnflDjnyrniTbWGSH017LsXs6S/qlBsIeajdz2OEqPfXFyYjahysZa/GT760ZZX641Jfo5ifqoeExA+FkG0PoouhRbVKgbltg6vF/ozC+LFuWfkvm8AWr2ZEeZ42NYJ/hXylCboO33K5rFz6blQaDPUnlcRcQL/CvcxHwPafJU3R6Qe3MS7KNFgxcZwIDAQAB",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": ["nativeMessaging", "notifications", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["i18n.js", "host-client.js", "content/youtube.js"],
+      "css": ["content/youtube.css"]
+    }
+  ],
+  "options_page": "options/options.html"
+}
