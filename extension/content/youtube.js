@@ -176,10 +176,13 @@ function mount() {
   render();
 }
 
+// YouTube keeps the same player across videos, so the buttons and markers survive navigation
+// and have to be redrawn with the empty range.
 document.addEventListener("yt-navigate-finish", () => {
   range = { start: null, end: null };
   armed = false;
   mount();
+  render();
 });
 new MutationObserver(mount).observe(document.documentElement, { childList: true, subtree: true });
 mount();

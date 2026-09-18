@@ -63,10 +63,16 @@
   margin-left: 12px;
   padding: 0 14px;
   border-radius: 18px;
-  background: var(--yt-spec-badge-chip-background, rgba(255, 255, 255, 0.1));
-  color: var(--yt-spec-text-primary, #fff);
+  background: rgba(0, 0, 0, 0.06);
+  color: #0f0f0f;
   font-size: 13px;
   white-space: nowrap;
+}
+
+/* YouTube no longer exposes its theme variables, but it flags dark mode on the root element. */
+html[dark] .cliprange-status {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .cliprange-status[hidden] {
@@ -77,8 +83,12 @@
   width: 120px;
   height: 4px;
   border-radius: 2px;
-  background: var(--yt-spec-10-percent-layer, rgba(255, 255, 255, 0.2));
+  background: rgba(0, 0, 0, 0.12);
   overflow: hidden;
+}
+
+html[dark] .cliprange-status-track {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .cliprange-status-track div {

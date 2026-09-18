@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ClipRange",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "__MSG_description__",
   "default_locale": "en",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0EPc2EHk02EgoRhRRj8EROC0Y2MCSqZwoHroGvuYqNZeO0wuj01PMRcsVXpk/dlPCAgrnrwT6gkMQepBnfCVC6fWSzuiP3xBXjKOAJAVDStdvTqjzjF0jCcY3HVqJo8m0LwAG8oGR3EQA8Wmhwvd2CTT8efPnflDjnyrniTbWGSH017LsXs6S/qlBsIeajdz2OEqPfXFyYjahysZa/GT760ZZX641Jfo5ifqoeExA+FkG0PoouhRbVKgbltg6vF/ozC+LFuWfkvm8AWr2ZEeZ42NYJ/hXylCboO33K5rFz6blQaDPUnlcRcQL/CvcxHwPafJU3R6Qe3MS7KNFgxcZwIDAQAB",
