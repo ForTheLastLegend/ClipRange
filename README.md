@@ -12,6 +12,10 @@ Windows only. The interface is in English, or in French if your browser is.
 
 > This tool goes against YouTube's terms of service and cannot be published on the Chrome Web Store.
 > It is shared here for personal use, to be loaded in developer mode.
+>
+> You use it at your own risk and under your own responsibility. Nothing here is meant to be harmful,
+> but the software comes with no warranty of any kind, and the author cannot be held liable for
+> anything that results from installing or using it.
 
 ## Install
 

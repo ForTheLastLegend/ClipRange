@@ -12,6 +12,10 @@ Windows uniquement. Interface en anglais, ou en français si le navigateur l'est
 
 > Cet outil va à l'encontre des conditions d'utilisation de YouTube et ne peut pas être publié sur le
 > Chrome Web Store. Il est partagé ici pour un usage personnel, à charger en mode développeur.
+>
+> Tu l'utilises à tes risques et sous ta propre responsabilité. Rien ici n'est conçu pour nuire, mais
+> le logiciel est fourni sans aucune garantie, et l'auteur ne peut être tenu responsable de quoi que
+> ce soit qui résulterait de son installation ou de son utilisation.
 
 ## Installation
 
