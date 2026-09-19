@@ -39,9 +39,11 @@ static partial class GifJob
     static async Task<(string ClipPath, string Title)> Download(GifSpec spec, ToolPaths tools, string workDir, Action<string, int?> report)
     {
         report("download", null);
-        var printed = new List<string>();
+        string? clipPath = null, title = null;
         var inv = CultureInfo.InvariantCulture;
 
+        // Printed values are prefixed so they cannot be mistaken for progress lines:
+        // a title may very well start with "[" too.
         var result = await Exec.Run(tools.YtDlp, [
             "--no-playlist",
             "--ffmpeg-location", tools.Ffmpeg,
@@ -49,22 +51,24 @@ static partial class GifJob
             "--force-keyframes-at-cuts",
             "--format", $"bv*[height<=?{SourceHeightFor(spec.Quality.Width)}]/bv*",
             "--output", Path.Combine(workDir, "clip.%(ext)s"),
-            "--print", "after_move:filepath",
-            "--print", "after_move:title",
+            "--print", "after_move:path=%(filepath)s",
+            "--print", "after_move:title=%(title)s",
             "--newline", "--progress",
             spec.Url,
         ], line =>
         {
             if (DownloadPercent().Match(line) is { Success: true } m)
                 report("download", (int)double.Parse(m.Groups[1].Value, inv));
-            else if (!line.StartsWith('['))
-                printed.Add(line);
+            else if (line.StartsWith("path="))
+                clipPath = line[5..];
+            else if (line.StartsWith("title="))
+                title = line[6..];
         });
 
-        if (result.ExitCode != 0 || printed.Count < 2)
+        if (result.ExitCode != 0 || clipPath is null || title is null)
             throw new JobFailed("yt-dlp", result.StderrTail is "" ? "yt-dlp failed without an error message" : result.StderrTail);
 
-        return (printed[^2], printed[^1]);
+        return (clipPath, title);
     }
 
     static async Task Encode(string clipPath, string gifPath, GifSpec spec, string ffmpeg, Action<string, int?> report)
@@ -74,7 +78,7 @@ static partial class GifJob
         var filters =
             $"fps={q.Fps},scale={q.Width}:-2:flags=lanczos,split[a][b];" +
             $"[a]palettegen=max_colors={q.Colors}:stats_mode={(q.PalettePerFrame ? "single" : "diff")}[p];" +
-            $"[b][p]paletteuse=new={(q.PalettePerFrame ? 1 : 0)}:dither={DitherArgs(q.Dither)}:diff_mode=rectangle";
+            $"[b][p]paletteuse=new={(q.PalettePerFrame ? 1 : 0)}:dither={DitherArgs(q.Dither)}";
 
         var result = await Exec.Run(ffmpeg, [
             "-y", "-hide_banner", "-loglevel", "error", "-nostats",

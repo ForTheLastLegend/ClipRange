@@ -30,7 +30,8 @@ Windows uniquement. Interface en anglais, ou en français si le navigateur l'est
 Ouvre ensuite n'importe quelle vidéo YouTube. Le navigateur affichera à chaque démarrage un avertissement
 sur les extensions en mode développeur, c'est le prix d'une extension hors store.
 
-yt-dlp doit être mis à jour régulièrement pour suivre YouTube : bouton **Mettre à jour** dans les options.
+yt-dlp doit être mis à jour régulièrement pour suivre YouTube : bouton **Mettre à jour** dans les options
+(un clic sur l'icône ClipRange dans la barre d'outils les ouvre).
 
 ## Comment ça marche
 

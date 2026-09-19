@@ -1,7 +1,7 @@
 ; Per-user install: no elevation, and the native messaging registration lives in HKCU.
 ; Build the host first: dotnet publish host -c Release
 
-#define AppVersion "0.1.1"
+#define AppVersion "0.1.2"
 #define HostName "com.cliprange.host"
 
 [Setup]

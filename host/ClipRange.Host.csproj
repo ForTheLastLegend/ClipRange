@@ -11,7 +11,7 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <AssemblyName>ClipRange.Host</AssemblyName>
     <RootNamespace>ClipRange.Host</RootNamespace>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Product>ClipRange</Product>
     <DeterministicSourcePaths>true</DeterministicSourcePaths>
   </PropertyGroup>

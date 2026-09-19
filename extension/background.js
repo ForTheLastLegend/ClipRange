@@ -68,3 +68,5 @@ chrome.notifications.onButtonClicked.addListener((id, button) => openResult(id, 
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === "install") chrome.runtime.openOptionsPage();
 });
+
+chrome.action.onClicked.addListener(() => chrome.runtime.openOptionsPage());

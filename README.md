@@ -29,7 +29,8 @@ Windows only. The interface is in English, or in French if your browser is.
 Then open any YouTube video. The browser will warn about developer mode extensions at every start,
 that is the price of an extension outside the store.
 
-yt-dlp has to be updated regularly to keep up with YouTube: **Update** button in the options.
+yt-dlp has to be updated regularly to keep up with YouTube: **Update** button in the options
+(click the ClipRange icon in the toolbar to open them).
 
 ## How it works
 
